@@ -34,6 +34,7 @@ import { SystemPrompt } from './SystemPrompt';
 import { TemperatureSlider } from './Temperature';
 import { MemoizedChatMessage } from './MemoizedChatMessage';
 
+
 interface Props {
   stopConversationRef: MutableRefObject<boolean>;
 }
@@ -224,7 +225,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
           };
           homeDispatch({
             field: 'selectedConversation',
-            value: updateConversation,
+            value: updatedConversation,
           });
           saveConversation(updatedConversation);
           const updatedConversations: Conversation[] = conversations.map(
@@ -405,9 +406,13 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                         <Spinner size="16px" className="mx-auto" />
                       </div>
                     ) : (
-                      'Chatbot UI'
+                      "GR0's AI Assistant"
                     )}
+                      
+
                   </div>
+                  <img className="mx-auto w-2/10 " src={"https://uploads-ssl.webflow.com/62faa5b90006d0726e621433/6305773196183e31a91aa45c_gr0-nav-logo.svg"} />
+
 
                   {models.length > 0 && (
                     <div className="flex h-full flex-col space-y-4 rounded-lg border border-neutral-200 p-4 dark:border-neutral-600">
