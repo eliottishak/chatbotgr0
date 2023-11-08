@@ -29,11 +29,10 @@ import Spinner from '../Spinner';
 import { ChatInput } from './ChatInput';
 import { ChatLoader } from './ChatLoader';
 import { ErrorMessageDiv } from './ErrorMessageDiv';
+import { MemoizedChatMessage } from './MemoizedChatMessage';
 import { ModelSelect } from './ModelSelect';
 import { SystemPrompt } from './SystemPrompt';
 import { TemperatureSlider } from './Temperature';
-import { MemoizedChatMessage } from './MemoizedChatMessage';
-
 
 interface Props {
   stopConversationRef: MutableRefObject<boolean>;
@@ -372,7 +371,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
             </div>
             <div className="mb-2">
               {t(
-                'Please set your OpenAI API key in the bottom left of the sidebar.',
+                'Please set your OpenAI API key in the bottom left of the sidebar. ',
               )}
             </div>
             <div>
@@ -408,11 +407,13 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                     ) : (
                       "GR0's AI Assistant"
                     )}
-                      
-
                   </div>
-                  <img className="mx-auto w-2/10 " src={"https://uploads-ssl.webflow.com/62faa5b90006d0726e621433/6305773196183e31a91aa45c_gr0-nav-logo.svg"} />
-
+                  <img
+                    className="mx-auto w-2/10 "
+                    src={
+                      'https://uploads-ssl.webflow.com/62faa5b90006d0726e621433/6305773196183e31a91aa45c_gr0-nav-logo.svg'
+                    }
+                  />
 
                   {models.length > 0 && (
                     <div className="flex h-full flex-col space-y-4 rounded-lg border border-neutral-200 p-4 dark:border-neutral-600">
