@@ -45,12 +45,14 @@ const handler = async (req: Request): Promise<Response> => {
       });
     } else if (response.status !== 200) {
       console.error("Error fetching models from OpenAI's API");
-      console.error(response);
       console.error(
         `OpenAI API returned an error ${
           response.status
         }: ${await response.text()}`,
       );
+      let resp = response.json();
+      console.error('RESPONSE', resp);
+      console.warn(response);
       throw new Error('OpenAI API returned an error');
     }
 
